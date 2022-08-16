@@ -1,18 +1,19 @@
 /*
-Crear cinco (5) variables constantes, asignando a cada una de ellas diferentes nombres de ciudades
+Declarar variables para representar la información de un carnet de conducir.
+Luego, concatenarlas y asignar el resultado de la operación a una variable denominada carnet
+
 */
-<script>
 
-const ciudad1 = "San Luis";
-const ciudad2 = "Villa Mercedes";
-const ciudad3 = "Merlo";
-const ciudad4 = "Juana Koslay";
-const ciudad5 = "Concaran";
 
-console.log(ciudad1);
-console.log(ciudad2);
-console.log(ciudad3);
-console.log(ciudad4);
-console.log(ciudad5);
+let NombreCompleto = "Juan Pablo Figini";
+let Domicilio = "Sauces del Chorrillo 1342";
+let FechaNacimiento = "16/08/1983";
+let Sexo = "M";
+let Categoria = "B2";
 
-</script>
+console.log(NombreCompleto);
+console.log(Domicilio);
+console.log(FechaNacimiento);
+console.log(Sexo);
+console.log(Categoria);
+
