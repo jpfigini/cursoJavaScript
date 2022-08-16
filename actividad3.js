@@ -9,6 +9,10 @@ const ciudad3 = "Merlo";
 const ciudad4 = "Juana Koslay";
 const ciudad5 = "Concaran";
 
-
+console.log(ciudad1);
+console.log(ciudad2);
+console.log(ciudad3);
+console.log(ciudad4);
+console.log(ciudad5);
 
 </script>
