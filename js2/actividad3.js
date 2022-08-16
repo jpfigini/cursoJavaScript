@@ -8,14 +8,22 @@ Si el valor está entre 1 y 4, efectuar una de las siguientes salidas según cor
 
 */
 
-let numero = prompt("Ingrese número");
+let numero = prompt("Ingrese número del 1 al 4");
 
-let minuscula = "y";
+//let minuscula = "y";
 
-if (letra === minuscula) {
-    console.log("Correcto");
+if (numero == 1) {
+    console.log("Elegiste a Homero");
 } 
-    else 
-{ 
-    console.log("Error");
+    else if  (numero == 2) {
+    console.log("Elegiste a Marge");
+
 }
+else if  (numero == 3) {
+    console.log("Elegiste a Bart"); }
+
+    else if  (numero == 4) {
+        console.log("Elegiste a Lisa"); }
+
+        else console.log("Número inválido");
+
