@@ -11,9 +11,6 @@ let FechaNacimiento = "16/08/1983";
 let Sexo = "M";
 let Categoria = "B2";
 
-console.log(NombreCompleto);
-console.log(Domicilio);
-console.log(FechaNacimiento);
-console.log(Sexo);
-console.log(Categoria);
+let carnet = "Nombre: " + NombreCompleto + ", Domicilio: " + Domicilio + ", Fecha de Nacimiento: " + FechaNacimiento + ", Sexo: " + Sexo + ", Categoría: " + Categoria + ".";
 
+console.log(carnet);
