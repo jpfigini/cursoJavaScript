@@ -8,4 +8,4 @@ let multi = numero1 * numero2;
 
 alert(numero1 + " + " + numero2 + " = " + suma );
 alert(numero1 + " - " + numero2 + " = " + resta );
-alert(numero1 + " * " + numero2 + " = " + multi );2
+alert(numero1 + " * " + numero2 + " = " + multi );
