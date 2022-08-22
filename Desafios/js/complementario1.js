@@ -12,12 +12,16 @@ nombre del cliente y la cantidad, descripción y costo de los repuestos a utiliz
 
 let numPresup = "Presupuesto N°:" + prompt("Ingrese número de presupuesto:");
 let nomCliente = "Nombre del Cliente:" + prompt("Ingrese nombre del Cliente:");
-let cantRep = prompt("Ingrese la cantidad de repuestos:");
+let cantRep = Number(prompt("Ingrese la cantidad de repuestos:"));
 
-let repuestos = ""
+let repuestos = "";
+let total = 0;
 
 for(let index=0; index < cantRep; index++){
-let repuestos = repuestos + prompt("Ingrese repuesto " + (index+1)+":");
-repuestos = repuestos + " $" + prompt("Ingrese precio del repuesto" + (index+1)+" $:") + "/n";
+repuestos = repuestos + prompt("Ingrese repuesto N°" + (index+1));
+let precio = Number(prompt("Ingrese precio del repuesto N°" + (index+1)+" $:"));
+repuestos = repuestos + " $" + precio + "\n";
+total = total + precio;
 }
 
+console.log(repuestos + "\n" + "Total: $" + total);
