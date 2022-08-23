@@ -10,8 +10,8 @@ nombre del cliente y la cantidad, descripción y costo de los repuestos a utiliz
 "/n" 
 */
 
-let numPresup = "Presupuesto N°:" + prompt("Ingrese número de presupuesto:");
-let nomCliente = "Nombre del Cliente:" + prompt("Ingrese nombre del Cliente:");
+let numPresup = "Presupuesto N°" + prompt("Ingrese número de presupuesto:");
+let nomCliente = "Nombre del Cliente: " + prompt("Ingrese nombre del Cliente:");
 let cantRep = Number(prompt("Ingrese la cantidad de repuestos:"));
 
 let repuestos = "";
@@ -24,4 +24,4 @@ repuestos = repuestos + " $" + precio + "\n";
 total = total + precio;
 }
 
-console.log(repuestos + "\n" + "Total: $" + total);
+alert(numPresup + "\n" + nomCliente + "\n" + "Repuestos:" + "\n" + repuestos + "\n" + "Total: $" + total);
