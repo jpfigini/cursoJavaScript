@@ -1,0 +1,8 @@
+/*
+DESAFÍO ENTREGABLE N° 1
+Compuesto por…
+Crear un algoritmo con un condicional.
+Crear un algoritmo utilizando un ciclo.
+Armar un simulador interactivo, la estructura final de tu proyecto integrador.
+
+*/
