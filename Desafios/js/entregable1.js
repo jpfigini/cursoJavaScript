@@ -27,16 +27,23 @@ function imprimePresupuesto (numPresup,nomCliente,repuestos,total){
     alert(numPresup + "\n" + nomCliente + "\n" + "Repuestos:" + "\n" + repuestos + "\n" + "Total: $" + total);
 }
 
-//Llamado para iniciar presupuesto
-iniciaPresupuesto();
-
+function cargaPresupuesto (){
 //Declaro un bucle mediante la sentencia "for" para cargar los repuestos y su correspondiente precio
 for(let index=0; index < cantRep; index++){
 repuestos = repuestos + prompt("Ingrese repuesto N°" + (index+1));
 let precio = Number(prompt("Ingrese precio del repuesto N°" + (index+1)+" $:"));
 repuestos = repuestos + " $" + precio + "\n";
 total = total + precio;
+    }
 }
+
+
+//Llamado para iniciar presupuesto
+iniciaPresupuesto();
+
+//Llamado para cargar presupuesto
+cargaPresupuesto();
 
 //LLamado a la función especifica para mostrar por pantalla los datos del presupuesto en forma ordenada.
 imprimePresupuesto(numPresup,nomCliente,repuestos,total);
+
