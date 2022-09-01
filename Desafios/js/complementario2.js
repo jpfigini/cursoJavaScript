@@ -15,6 +15,7 @@ let total = 0;
 let continua = "";
 let presupuesto = [];
 let repuestosArray = [];
+let imprimePresup = "";
 
 //Declaro una función para iniciar un nuevo presupuesto
 function iniciaPresupuesto (){
@@ -26,7 +27,7 @@ cantRep = Number(prompt("Ingrese la cantidad de repuestos:"));
 
 //Declaro una función para imprimir un presupuesto
 function imprimePresupuesto (numPresup,nomCliente,repuestos,total){
-var imprimePresup = presupuesto[0] + "\n" + presupuesto[1] + "\n" + "Repuestos:";
+imprimePresup = presupuesto[0] + "\n" + presupuesto[1] + "\n" + "Repuestos:";
 
 for(let index=0; index < repuestosArray.length; index+2){
 imprimePresup = repuestosArray[index] + repuestosArray[index+1]   + "\n" ;
