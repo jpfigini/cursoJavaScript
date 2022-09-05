@@ -15,25 +15,47 @@ let presupuesto = [];
 let repuestosArray = [];
 let imprimePresup = "";
 
+class Producto {
+    constructor (descripcion,precio){
+        this.descripcion = descripcion;
+        this.precio = precio;
+    }
+}
+
+class Presupuesto {
+    constructor (numero, cliente, cantidad, productos){
+    this.numero = numero;
+    this.cliente = cliente;
+    this.cantidad = cantidad;
+    this.productos = productos;
+    this.total = 0;
+    this.descuento = false;
+
+    }
+
+    aplicarDescuento () {
+        this.descuento = true;
+    }
+
+    imprimePresupuesto(numero){
+        imprimePresup = presupuesto[0] + "\n" + presupuesto[1] + "\n" + "Repuestos:" + "\n";
+
+        for(let index=0; index < repuestosArray.length; index = index+2){
+        
+        imprimePresup = imprimePresup + repuestosArray[index] + " " + repuestosArray[index+1]   + "\n" ;
+        }
+        imprimePresup = imprimePresup + "Total: $" + total;
+        
+        alert(imprimePresup);
+    }
+
+}
 //Declaro una función para iniciar un nuevo presupuesto
 function iniciaPresupuesto (){
 //Se piden los datos del presupuesto y se cargan en un array
 presupuesto.push("Presupuesto N°" + prompt("Ingrese número de presupuesto:"));
 presupuesto.push("Nombre del Cliente: " + prompt("Ingrese nombre del Cliente:"));
 cantRep = Number(prompt("Ingrese la cantidad de repuestos:"));
-}
-
-//Declaro una función para imprimir un presupuesto
-function imprimePresupuesto (){
-imprimePresup = presupuesto[0] + "\n" + presupuesto[1] + "\n" + "Repuestos:" + "\n";
-
-for(let index=0; index < repuestosArray.length; index = index+2){
-
-imprimePresup = imprimePresup + repuestosArray[index] + " " + repuestosArray[index+1]   + "\n" ;
-}
-imprimePresup = imprimePresup + "Total: $" + total;
-
-alert(imprimePresup);
 }
 
 //Declaro un función para la carga de los productos del presupuesto
