@@ -27,12 +27,14 @@ cantRep = Number(prompt("Ingrese la cantidad de repuestos:"));
 
 //Declaro una función para imprimir un presupuesto
 function imprimePresupuesto (numPresup,nomCliente,repuestos,total){
-imprimePresup = presupuesto[0] + "\n" + presupuesto[1] + "\n" + "Repuestos:";
+imprimePresup = presupuesto[0] + "\n" + presupuesto[1] + "\n" + "Repuestos:" + "\n";
 
-for(let index=0; index < repuestosArray.length; index+2){
-imprimePresup = repuestosArray[index] + repuestosArray[index+1]   + "\n" ;
+for(let index=0; index < repuestosArray.length; index = index+2){
+
+imprimePresup = imprimePresup + repuestosArray[index] + " " + repuestosArray[index+1]   + "\n" ;
 }
 imprimePresup = imprimePresup + "Total: $" + total;
+
 alert(imprimePresup);
 }
 
