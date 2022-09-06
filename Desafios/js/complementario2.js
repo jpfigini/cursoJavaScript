@@ -33,8 +33,8 @@ class Presupuesto {
 
     imprimePresupuesto(){
         var imprimePresup = "Presupuesto N°" + this.numero + "\n" + "Cliente: " + this.cliente + "\n" + "Repuestos: \n";
+        
         var cant = this.cantidad;
-        console.log(cant);
         for(let index=0; index < this.cantidad; index++){
                 imprimePresup = imprimePresup + this.repuestos[index].descripcion + " _____ " + this.repuestos[index].precio   + "\n" ;
             }
@@ -42,43 +42,23 @@ class Presupuesto {
         if (this.descuento == false){
             imprimePresup = imprimePresup + "Total: $" + this.total;}
         else{
-            imprimePresup = imprimePresup + "Total: $" + this.total + "Total con descuento: $" + this.total * 0,9;
+            imprimePresup = imprimePresup + "Total: $" + this.total + "\n Total con descuento: $" + this.total * 0.9;
         }
             
         alert(imprimePresup);
     }
 
     imprimePresupuestoEncabezado(){
-        var imprimePresup = "Presupuesto N°" + this.numero + " - " + "Cliente: " + this.cliente + " - " + "Total: $" + this.total;
+        var imprimePresup = "Presupuesto N°" + this.numero + " - " + "Cliente: " + this.cliente + " - " + "Total: $" + this.total + "\n";
         return imprimePresup;
     }
 
     agregaRepuesto(repuesto,total){
-        this.repuestos.push(repuesto);
+        this.repuestos = repuesto;
         this.total = total;
     }
 
 }
-
-
-//Declaro una función para iniciar un nuevo presupuesto
-//function iniciaPresupuesto (){
-//Se piden los datos del presupuesto y se cargan en un array
-//presupuesto.push("Presupuesto N°" + prompt("Ingrese número de presupuesto:"));
-//presupuesto.push("Nombre del Cliente: " + prompt("Ingrese nombre del Cliente:"));
-//cantRep = Number(prompt("Ingrese la cantidad de repuestos:"));
-//}
-
-//Declaro un función para la carga de los productos del presupuesto
-//function cargaPresupuesto (){
-//Declaro un bucle mediante la sentencia "for" para cargar los repuestos y su correspondiente precio dentro de un array
-//for(let index=0; index < cantRep; index++){
-//repuestosArray.push(prompt("Ingrese repuesto N°" + (index+1)));
-//let precio = Number(prompt("Ingrese precio del repuesto N°" + (index+1)+" $:"));
-//repuestosArray.push(precio);
-//total = total + precio;
-//    }
-//}
 
 
 let opcion;
@@ -87,14 +67,13 @@ let presupuestosArray = [];
 
 do {
 
-    opcion  = prompt("Ingrese la opción deseada: \n 1 - Nuevo Presupuesto \n 2 - Hacer descuento \n 3 - Agregar repuesto \n 4 - Imprimir Presupuesto \n 0 - Salir")
-
+    //opcion  = prompt("Ingrese la opción deseada: \n 1 - Nuevo Presupuesto \n 2 - Hacer descuento \n 3 - Agregar repuesto \n 4 - Imprimir Presupuesto \n 0 - Salir")
+    opcion  = prompt("Ingrese la opción deseada: \n 1 - Nuevo Presupuesto \n 2 - Hacer descuento \n 4 - Imprimir Presupuesto \n 0 - Salir")
      switch (opcion) {
-        case "1":
+        case "1": 
             let repuestosArray = [];
             var total = 0;            
              
-             var numero = prompt("Ingrese número de presupuesto:");
              var cliente = prompt("Ingrese nombre del Cliente:");
              var cantRep = Number(prompt("Ingrese la cantidad de repuestos:"));
              
@@ -104,6 +83,8 @@ do {
                 repuestosArray.push(new Repuesto(descrip,precio));
                 total = total + precio;        
              }
+             var numero = 1 + presupuestosArray.length;
+              
              presupuestosArray.push(new Presupuesto(numero,cliente,cantRep,repuestosArray,total));
              break;
         case "2":
@@ -113,31 +94,34 @@ do {
                 encabezados = encabezados + presupuestosArray[index].imprimePresupuestoEncabezado();  
              }
 
-            var numero = prompt("Ingrese número de presupuesto a aplicar descuento: \n" + encabezados);
+            var numero = (prompt("Ingrese número de presupuesto a aplicar descuento: \n" + encabezados) - 1);
             
             presupuestosArray[numero].aplicarDescuento();
             presupuestosArray[numero].imprimePresupuesto();
 
             break;
-        case "3":
+            //Se comenta al no estar finalizado
+       /* case "3": 
+            let arreglonew = [];
             var cantPresup = presupuestosArray.length;
             var encabezados = "";
             for(let index=0; index < cantPresup; index++){
                 encabezados = encabezados + presupuestosArray[index].imprimePresupuestoEncabezado();  
              }
 
-            var numero = prompt("Ingrese número de presupuesto a agregar repuesto: \n" + encabezados);
+            var numero = (prompt("Ingrese número de presupuesto a agregar repuesto: \n" + encabezados) -1);
             
-            var descrip = prompt("Ingrese nuevo repuesto:" + (index+1));
-            var precio = Number(prompt("Ingrese precio del nuevo repuesto" + (index+1)+" $:"));
-            var repuesto = new Repuesto(descrip,precio);
-            //repuestosArray.push(new Repuesto(descrip,precio));
-            var total = presupuestosArray[numero].total + precio;        
-            
-            presupuestosArray[numero].agregaRepuesto(repuesto,total);
+            var descrip = prompt("Ingrese nuevo repuesto:");
+            var precio = Number(prompt("Ingrese precio del nuevo repuesto $:"));
+            var total = presupuestosArray[numero].total + precio;
+            arreglonew.push(new Repuesto(descrip,precio));     
+            var arregloold = presupuestosArray[numero].repuestos
+            arregloold = arregloold.concat(arreglonew);
+               
+            presupuestosArray[numero].agregaRepuesto(arregloold,total);
             presupuestosArray[numero].imprimePresupuesto();
 
-            break;
+            break;*/
         case "4":
             var cantPresup = presupuestosArray.length;
             console.log(cantPresup);
@@ -149,7 +133,7 @@ do {
                 console.log(encabezados);
              }
 
-            var numero = prompt("Ingrese número de presupuesto a imprimir: \n" + encabezados);
+            var numero = (prompt("Ingrese número de presupuesto a imprimir: \n" + encabezados) - 1);
             presupuestosArray[numero].imprimePresupuesto();
 
             break;    
