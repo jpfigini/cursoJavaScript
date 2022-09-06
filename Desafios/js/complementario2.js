@@ -37,19 +37,19 @@ class Presupuesto {
         this.descuento = true;
     }
 
-    imprimePresupuesto(numero){
-        imprimePresup = presupuesto[0] + "\n" + presupuesto[1] + "\n" + "Repuestos:" + "\n";
+    imprimePresupuesto(){
+        imprimePresup = "Presupuesto N°" + this.numero + "\n" + "Cliente: " + this.cliente + "\n" + "Repuestos:" + "\n";
 
-        for(let index=0; index < repuestosArray.length; index = index+2){
-        
-        imprimePresup = imprimePresup + repuestosArray[index] + " " + repuestosArray[index+1]   + "\n" ;
-        }
+            for(let index=0; index < this.cantidad.length; index = index+2){
+                imprimePresup = imprimePresup + this.productos[index] + "_____" + this.productos[index+1]   + "\n" ;
+            }
         imprimePresup = imprimePresup + "Total: $" + total;
-        
         alert(imprimePresup);
     }
 
 }
+
+
 //Declaro una función para iniciar un nuevo presupuesto
 function iniciaPresupuesto (){
 //Se piden los datos del presupuesto y se cargan en un array
