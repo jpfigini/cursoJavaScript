@@ -143,4 +143,4 @@ do {
             alert("Opción Incorrecta");
             break;
     }
-} while ("No" != (continua = prompt("Desea continuar operando?: Si/No:")));
+} while ("No" != (opcion = prompt("Desea continuar operando?: Si/No:")));
