@@ -14,3 +14,4 @@ function imprimirFrutas(collection){
 
 
 console.log(imprimirFrutas(frutas));
+
