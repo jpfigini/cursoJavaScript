@@ -11,7 +11,7 @@ Interactuar con el usuario por medio de PROMPTS y ALERTS
 */
 
 let continua = "";
-
+let a = 0;
 
 class Repuesto {
     constructor(descripcion, precio) {
@@ -60,14 +60,26 @@ class Presupuesto {
         this.total = total;
     }
 
+
+}
+
+function sumatotales(tot,fn){
+    for(item of tot){
+       fn(item);
+    }
+}
+
+function acumular(num){
+    a += num;
 }
 
 let opcion;
 let presupuestosArray = [];
+let totales = [];
 
 do {
     //opcion  = prompt("Ingrese la opción deseada: \n 1 - Nuevo Presupuesto \n 2 - Hacer descuento \n 3 - Agregar repuesto \n 4 - Imprimir Presupuesto \n 0 - Salir")
-    opcion = prompt("Ingrese la opción deseada: \n 1 - Nuevo Presupuesto \n 2 - Hacer descuento \n 4 - Imprimir Presupuesto \n 0 - Salir")
+    opcion = prompt("Ingrese la opción deseada: \n 1 - Nuevo Presupuesto \n 2 - Hacer descuento \n 3 - Imprimir Suma Total de Presupuestos \n 4 - Imprimir Presupuesto \n 5 - Buscar presupuestos por cliente \n 0 - Salir")
     switch (opcion) {
         case "1":
             let repuestosArray = [];
@@ -81,6 +93,7 @@ do {
                 var precio = Number(prompt("Ingrese precio del repuesto N°" + (index + 1) + " $:"));
                 repuestosArray.push(new Repuesto(descrip, precio));
                 total = total + precio;
+                totales.push(precio); 
             }
             var numero = 1 + presupuestosArray.length;
 
@@ -101,24 +114,8 @@ do {
             break;
         //Se comenta al no estar finalizado
         case "3":
-            let arreglonew = [];
-            var cantPresup = presupuestosArray.length;
-            var encabezados = "";
-            for (let index = 0; index < cantPresup; index++) {
-                encabezados = encabezados + presupuestosArray[index].imprimePresupuestoEncabezado();
-            }
-
-            var numero = (prompt("Ingrese número de presupuesto a agregar repuesto: \n" + encabezados) - 1);
-
-            var descrip = prompt("Ingrese nuevo repuesto:");
-            var precio = Number(prompt("Ingrese precio del nuevo repuesto $:"));
-            var total = presupuestosArray[numero].total + precio;
-            arreglonew.push(new Repuesto(descrip, precio));
-            var arregloold = presupuestosArray[numero].repuestos
-            arregloold = arregloold.concat(arreglonew);
-
-            presupuestosArray[numero].agregaRepuesto(arregloold, total);
-            presupuestosArray[numero].imprimePresupuesto();
+            sumatotales(totales,acumular);
+            alert("La suma total es: $" + a);
 
             break;
         case "4":
@@ -135,6 +132,17 @@ do {
             var numero = (prompt("Ingrese número de presupuesto a imprimir: \n" + encabezados) - 1);
             presupuestosArray[numero].imprimePresupuesto();
 
+            break;
+        case "5":
+            cliente = {};
+            cliente = prompt("Ingrese nombre del Cliente que quiere buscar:");
+            resultado = presupuestosArray.find((presupuesto) => presupuesto.cliente === cliente); 
+            if (resultado) {
+                resultado.imprimePresupuesto();
+            }
+            else {
+                alert('No se encontró el presupuesto deseado');
+            }
             break;
         case "0":
             alert("Sesión finalizada");

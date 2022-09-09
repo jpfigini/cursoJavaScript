@@ -55,10 +55,23 @@ class Presupuesto {
         this.total = total;
     }
 
+    sumatotales(totales,funcion){
+        for(item of totales){
+            funcion(item);
+        }
+    }
+
+    acumular(num){
+        a += num;
+    }
+
+    
 }
 
 let opcion;
 let presupuestosArray = [];
+let totales = [];
+let a = 0;
 
 do {
     //opcion  = prompt("Ingrese la opción deseada: \n 1 - Nuevo Presupuesto \n 2 - Hacer descuento \n 3 - Agregar repuesto \n 4 - Imprimir Presupuesto \n 0 - Salir")
@@ -68,14 +81,15 @@ do {
                 let repuestosArray = [];
                 var total = 0;            
                 
-                var cliente = prompt("Ingrese nombre del Cliente:");
+                const cliente = prompt("Ingrese nombre del Cliente:");
                 var cantRep = Number(prompt("Ingrese la cantidad de repuestos:"));
                 
                 for(let index=0; index < cantRep; index++){
                     var descrip = prompt("Ingrese repuesto N°" + (index+1));
                     var precio = Number(prompt("Ingrese precio del repuesto N°" + (index+1)+" $:"));
                     repuestosArray.push(new Repuesto(descrip,precio));
-                    total = total + precio;        
+                    total = total + precio;
+                    totales.push(precio);        
                 }
                 var numero = 1 + presupuestosArray.length;
                 
@@ -91,11 +105,12 @@ do {
                 var numero = (prompt("Ingrese número de presupuesto a aplicar descuento: \n" + encabezados) - 1);
                 
                 presupuestosArray[numero].aplicarDescuento();
+                totales[numero] = totales[numero] * 0.1;
                 presupuestosArray[numero].imprimePresupuesto();
 
                 break;
                 //Se comenta al no estar finalizado
-            case "3": 
+           /* case "3": 
                 let arreglonew = [];
                 var cantPresup = presupuestosArray.length;
                 var encabezados = "";
@@ -115,7 +130,7 @@ do {
                 presupuestosArray[numero].agregaRepuesto(arregloold,total);
                 presupuestosArray[numero].imprimePresupuesto();
 
-                break;
+                break; */
             case "4":
                 var cantPresup = presupuestosArray.length;
                 console.log(cantPresup);
@@ -130,7 +145,11 @@ do {
                 var numero = (prompt("Ingrese número de presupuesto a imprimir: \n" + encabezados) - 1);
                 presupuestosArray[numero].imprimePresupuesto();
 
-                break;    
+                break;  
+            case "5":
+
+                let sumTotal = sumatotales(totales,acumular());  
+                console.log(sumTotal);
             case "0":
                 alert("Sesión finalizada");
                 break;
