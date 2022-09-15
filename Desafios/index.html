@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Figini Juan Pablo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Presupuestos</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Pricing</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+    <div class="container my-2">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col_lg-4 col-xl-4">
+                <h2>Alta de Presupuestos</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="cliente" class="form-label">cliente</label>
+                        <input type="email" class="form-control" id="Cliente" placeholder="Nombre completo">
+                      </div>
+                      <div class="mb-3">
+                        <label for="total" class="form-label">sssss</label>
+                        <textarea class="form-control" id="total" rows="3"></textarea>
+                      </div>
+                      <div class="d-grid gap-2">
+                      <button class="btn-primary">Guardar</button>
+                      <button class="btn-primary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-12 col-md-8 col_lg-8 col-xl-8">
+                <h2>Listado de Presupuestos</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Cliente</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>JavaScript</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Python</td>
+                            <td>110</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>C#</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Ruby</td>
+                            <td>31</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       
+    </div>
+</body>
+</html>
