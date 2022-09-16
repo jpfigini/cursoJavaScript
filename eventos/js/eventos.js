@@ -1,5 +1,5 @@
 
-class Producto {
+class Repuestos {
 
     constructor (id,producto,precio)
     {
@@ -7,7 +7,7 @@ class Producto {
         this.producto=producto;
         this.precio=parseFloat(precio);
     }
-
+ 
     impuesto () 
     {
         return this.precio=this.precio * 1.21;
@@ -16,36 +16,31 @@ class Producto {
 }
 
 
-let productos = [
+let repuestos = [
     {
       id: 1,
-      nombre: "Mouse",
-      precio: 1500,
-      //imagen: "./img/imagenproducto.jpg",
+      nombre: "Caliper",
+      precio: 4500,
     },
     {
       id: 2,
-      nombre: "Teclado",
-      precio: 2000,
-      //imagen: "./img/imagenproducto.jpg",
+      nombre: "Cubierta",
+      precio: 10000
     },
     {
       id: 3,
-      nombre: "Auriculares",
+      nombre: "Espejo",
       precio: 5000,
-      imagen: "./img/imagenproducto.jpg",
     },
     {
       id: 4,
-      nombre: "Monitor",
-      precio: 20000,
-      //imagen: "./img/imagenproducto.jpg",
+      nombre: "Optica",
+      precio: 23000
     },
     {
       id: 5,
-      nombre: "Impresora",
-      precio: 15000,
-      //imagen: "./img/imagenproducto.jpg",
+      nombre: "Carburador",
+      precio: 18500
     },
   
   ];
@@ -53,15 +48,15 @@ let productos = [
   const contenedor = document.getElementById("container");
   contenedor.innerHTML = "";
   
-  productos.forEach((producto) => {
+  repuestos.forEach((repuesto) => {
     let card = document.createElement("div");
     card.classList.add("card", "col-sm-12", "col-lg-3");
     let html = `
       
       <div class="card-body">
       <ul>
-        <li><h5 class="card-title">${producto.nombre}</h5>
-        <p class="card-text">${producto.precio}</p>
+        <li><h5 class="card-title">${repuesto.nombre}</h5>
+        <p class="card-text">${repuesto.precio}</p>
       </li>
       </ul>  
       </div>
@@ -82,7 +77,7 @@ let productos = [
     let opcionprecio = document.getElementById("precio").value;
     
 
-    let ingresaproductos = new Producto(parseInt(Math.random() * 100),opcionprod,opcionprecio);
+    let ingresaproductos = new Repuestos(parseInt(Math.random() * 100),opcionprod,opcionprecio);
     
     
     console.log(ingresaproductos);
