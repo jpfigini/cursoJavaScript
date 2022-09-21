@@ -4,6 +4,10 @@ let botonr = document.getElementById("ingresarep");
 botonr.addEventListener("click",agregarRepuesto);
 botonr.addEventListener("click",(e) => e.preventDefault());
 
+let botonp = document.getElementById("ingresaform");
+botonp.addEventListener("click",agregarPresupuesto);
+botonp.addEventListener("click",(e) => e.preventDefault());
+
 function agregarRepuesto(){
     let repuestot = document.getElementById("repuesto").value
     let preciot = document.getElementById("precio").value
@@ -26,3 +30,6 @@ function hacerTablaRepuesto(){
 }
 
 
+function agregarPresupuesto(){
+console.log("Guarda presupuesto");
+}

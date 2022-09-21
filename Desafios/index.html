@@ -32,7 +32,7 @@
                 <form>
                     <div class="mb-3">
                         <label for="cliente" class="form-label">Cliente</label>
-                        <input type="email" class="form-control" id="Cliente" placeholder="Nombre completo">
+                        <input class="form-control" id="cliente" placeholder="Nombre completo">
                       </div>
                       <div class="mb-3">
                         <div class="form-gruop">
@@ -43,14 +43,13 @@
                             <label for="precio">Precio</label>
                             <input class="form-control" id="precio" name="precio" type="number">
                         </div>
-                        <div class="form-gruop">
-                       <!-- <button type="button" onclick="agregarProducto()" class="btn-primary" id="ingresarep">Agregar</button> -->
+                        <div class="mb-3">
                        <button class="btn-primary" id="ingresarep">Agregar</button>
                         </div>
                       <table id="repuestos"></table>
                       </div>
                       <div class="d-grid gap-2">
-                      <button class="btn-primary">Guardar</button>
+                      <button class="btn-primary" id="ingresaform">Guardar</button>
                       <button class="btn-primary">Limpiar</button>
                       </div>
                 </form>
@@ -65,28 +64,7 @@
                             <th>Total</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Juan Carlos Perez</td>
-                            <td>$2540</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ignacio Pereyra</td>
-                            <td>$4000</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Diego Espinoza</td>
-                            <td>$23000</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Carlos Benavidez</td>
-                            <td>$32000</td>
-                        </tr>
-                    </tbody>
+                    
                 </table>
             </div>
         </div>
