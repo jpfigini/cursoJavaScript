@@ -1,8 +1,8 @@
 let arregloProductos = [];
 
-let boton = document.getElementById("ingresarep");
-boton.addEventListener("click",agregarRepuesto);
-boton.addEventListener("click",(e) => e.preventDefault());
+let botonr = document.getElementById("ingresarep");
+botonr.addEventListener("click",agregarRepuesto);
+botonr.addEventListener("click",(e) => e.preventDefault());
 
 function agregarRepuesto(){
     let repuestot = document.getElementById("repuesto").value
