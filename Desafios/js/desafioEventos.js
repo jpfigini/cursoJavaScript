@@ -16,10 +16,12 @@ let presupJson;
 let cliente;
 let cantidad = 0;
 
+//Evento para el botón de agregar repuesto
 let botonr = document.getElementById("ingresarep");
 botonr.addEventListener("click",agregarRepuesto);
 botonr.addEventListener("click",(e) => e.preventDefault());
 
+//Evento para el botón guardar Presupuesto
 let botonp = document.getElementById("ingresaform");
 botonp.addEventListener("click",agregarPresupuesto);
 botonp.addEventListener("click",(e) => e.preventDefault());
@@ -32,7 +34,7 @@ function agregarRepuesto(){
     hacerTablaRepuesto();
 }
 
-
+//Carga tabla de repuestos de presupuesto con una tabla dinamica
 function hacerTablaRepuesto(){
     let tabla = "<thead><tr><th>Repuesto</th><th>Precio</th></tr></thead><tbody>";
     cantidad = arregloProductos.length;
@@ -54,7 +56,8 @@ function hacerTablaRepuesto(){
 
 }
 
-
+//No se terminó de implemetar
+//Función que guarda el presupuesto en un arreglo de presupuestos, limpia el localStorage.
 function agregarPresupuesto(){
 cantidad = arregloProductos.length;
 presupid = presupuestosArray.length;
@@ -66,17 +69,12 @@ if (cantidad < 1){
     console.log("No hay nada que guardar");
 }
 else {
-    /*cliente = document.getElementById("cliente").value
-    presupuestosArray.push(new Presupuesto(presupid, cliente, cantidad, arregloProductos, total));
-    presupJson = JSON.stringify(presupuestosArray[presupid]);
-    console.log(presupJson);
-    localStorage.setItem('presupuesto',presupJson);*/
     console.log("Guarda presupuesto");
     localStorage.clear();
 }
 
 }
-
+//función que carga la tabla de repuestos sin guardar recuperados del localStorage
 function cargaTemporal(presup){
     let tabla = "<thead><tr><th>Repuesto</th><th>Precio</th></tr></thead><tbody>";
     console.log(presup.cantidad);
@@ -89,11 +87,11 @@ function cargaTemporal(presup){
     }
     tabla += `<tr><td>TOTAL</td><td>${total}</td></tr></tbody>`
     document.getElementById("repuestos").innerHTML = tabla;
-    let clienteTemp = `<input class="form-control" id="cliente" placeholder="pre"></input>`
+    //let clienteTemp = `<input class="form-control" id="cliente" value=${presup.cliente}>`
     document.getElementById("cliente").innerHTML = clienteTemp;
 }
 
- 
+// Si quedó un presupuesto pendiente de guardar lo levanto desde el localStorage
 if (localStorage.getItem("presupuesto")){
 let presupCache = JSON.parse(localStorage.getItem('presupuesto'));
 cargaTemporal(presupCache);
