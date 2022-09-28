@@ -112,8 +112,8 @@ if (localStorage.getItem("presupuesto")){
         text: "Desea pre cargar el formulario con la información resguardada?",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Si',
-        cancelButtonText: 'No',
+        confirmButtonText: '- Si -',
+        cancelButtonText: '- No -',
         reverseButtons: true
       }).then((result) => {
         /* Dispara alerta y recupera la información del localStorage */
