@@ -66,6 +66,14 @@ function hacerTablaRepuesto(){
     }
     tabla += `<tr><td>TOTAL</td><td>${total}</td></tr></tbody>`
     document.getElementById("repuestos").innerHTML = tabla;
+    Toastify({
+      text: "Repuesto agregado!",
+      duration: 2000,
+      position: "left",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+      }).showToast();
 }
 
 //No se terminó de implemetar
