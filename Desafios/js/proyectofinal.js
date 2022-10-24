@@ -65,8 +65,6 @@ function hacerTablaRepuesto() {
   let tabla = "<thead><tr><th>Repuesto</th><th>Precio</th></tr></thead><tbody>";
   cantidad = arregloProductos.length;
   presupid = presupuestosArray.length;
-  console.log("armando repuestos");
-  console.log(presupid);
   presupid++;
   total = 0;
   //Operador lógico AND, operador ++
@@ -149,7 +147,6 @@ fetch("./json/fetch.json")
 if (localStorage.getItem("base")) {
   presupuestosArray = JSON.parse(localStorage.getItem('base'));
   hacerTablaPresupuestos(presupuestosArray);
-  console.log("estoy buscando si hay base");
 }
 
 // Si quedó un presupuesto pendiente de guardar lo levanto desde el localStorage
